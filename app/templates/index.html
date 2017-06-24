@@ -1,0 +1,74 @@
+{% include 'header.html' %}
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="jumbotron customBackground">
+        <h1>Hello-World (web-ui)</h1>
+        <h2>{{ message }}</h2>
+        <p> served from Pod <b>{{ hostname }}</b></p>
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Instance request count</h1>
+        </div>
+        <div class="panel-body">{{ instance_hits }}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Global request count (redis DB service)</h1>
+        </div>
+        <div class="panel-body">{{ global_hits }}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Instance alive since (sec)</h1>
+        </div>
+        <div class="panel-body">{{ timeAlive }}</div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">/etc/hello-world/hello.config</h1>
+        </div>
+        <div class="panel-body">
+          {{ configFile }}
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Environment variables</h1>
+        </div>
+        <div class="panel-body">
+          <ul id="environment">
+            {% for key, value in env %}
+            <li><b>{{ key }}</b>: {{ value }}</li>
+            {% endfor %}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+{% include 'footer.html' %}
