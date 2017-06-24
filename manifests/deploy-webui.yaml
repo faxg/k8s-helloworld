@@ -31,7 +31,7 @@ spec:
 
       containers:
         - name: web-ui
-          image: faxg/hello-world-web:latest
+          image: faxg/hello-world-web:1.0.1
 
           livenessProbe:
               initialDelaySeconds: 1
