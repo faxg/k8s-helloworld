@@ -8,14 +8,14 @@ metadata:
   creationTimestamp: 2017-06-09T15:17:30Z
   labels:
     app: helloWorld
-    version: "1.0.0"
+    version: "1.0.1"
 data:
-  message: "This is version 1.0.0 ('green') "
+  message: "This is version 1.0.1 ('blue') "
   log.level: INFO
   log.target: localhost
   hello.config: |
     environment=DEV
-    version=1.0.0
+    version=1.0.1
     some_server=dev.mycompany.com
 
 
@@ -30,7 +30,7 @@ metadata:
   creationTimestamp: 2017-06-10T20:09:30Z
   labels:
     app: helloWorld
-    version: "1.0.0"
+    version: "1.0.1"
 data:
   redis.conf: |
     port 6379
