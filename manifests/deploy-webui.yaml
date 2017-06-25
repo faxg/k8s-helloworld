@@ -93,6 +93,8 @@ spec:
   - port: 80
     targetPort: 5000
     protocol: TCP
+  externalIPs:
+    - 192.168.200.10 # external reachable on IP:port 
   selector:
     name: web-ui
     app: helloWorld
@@ -102,21 +104,21 @@ spec:
 ##
 ## Expose to external clients as Ingress
 ##
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: hello-world-ingress
-  labels:
-    name: hello-world-ingress
-    app: helloWorld
-    version: "1.0.1"
-
-spec:
-  rules:
-  #- host: "localhost"
-  - http:
-      paths:
-      - path: /hello-world
-        backend:
-          serviceName: web-ui
-          servicePort: 80
+# apiVersion: extensions/v1beta1
+# kind: Ingress
+# metadata:
+#   name: hello-world-ingress
+#   labels:
+#     name: hello-world-ingress
+#     app: helloWorld
+#     version: "1.0.1"
+#
+# spec:
+#   rules:
+#   #- host: "localhost"
+#   - http:
+#       paths:
+#       - path: /hello-world
+#         backend:
+#           serviceName: web-ui
+#           servicePort: 80
