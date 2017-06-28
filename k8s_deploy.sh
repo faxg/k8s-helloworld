@@ -13,4 +13,10 @@ kubectl apply -f ./manifests/deploy-db.yaml --namespace="$NS" --record
 
 
 # ssh into container: kubectl --namespace=hello-world exec -it web-ui-deployment-1287265622-qvtrl -- /bin/sh
+
 # kubectl rollout status deploy/web-ui-deployment --namespace="hello-world"
+# kubectl rollout history deploy/web-ui-deployment --namespace="hello-world"
+# kubectl rollout history deploy/web-ui-deployment --revision=2 --namespace="hello-world"
+# kubectl rollout undo deploy/web-ui-deployment --to-revision=1 --namespace="hello-world"
+# kubectl set image deploy/web-ui-deployment web-ui=faxg/hello-world-web:1.0.0 --namespace="hello-world"
+# kubectl set image deploy/web-ui-deployment web-ui=faxg/hello-world-web:1.0.1 --namespace="hello-world"
