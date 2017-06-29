@@ -4,9 +4,9 @@
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: web-ui-deployment
+  name: web-ui
   labels:
-    name: web-ui-deployment
+    name: web-ui
     app: helloWorld
     version: "1.0.0"
 
@@ -96,26 +96,3 @@ spec:
     name: web-ui
     app: helloWorld
     version: "1.0.0"
-
----
-##
-## Expose to external clients as Ingress
-##
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: hello-world-ingress
-  labels:
-    name: hello-world-ingress
-    app: helloWorld
-    version: "1.0.0"
-
-spec:
-  rules:
-  #- host: "localhost"
-  - http:
-      paths:
-      - path: /hello-world
-        backend:
-          serviceName: web-ui
-          servicePort: 80

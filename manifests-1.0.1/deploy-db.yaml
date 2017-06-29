@@ -8,7 +8,7 @@ metadata:
   labels:
     name: redis-deployment
     app: helloWorld
-    version: "1.0.0"
+    version: "1.0.1"
 
 spec:
   replicas: 1
@@ -18,7 +18,7 @@ spec:
       labels:
         name: redis-db
         app: helloWorld
-        version: "1.0.0"
+        version: "1.0.1"
 
     spec:
       containers:
